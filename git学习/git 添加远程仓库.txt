@@ -1,8 +1,11 @@
 
 
 //设置Git的username 和email
-$ git config --global user.name "xuhaiyan"
-$ git config --global user.email "haiyan.xu.vip@gmail.com"
+$ git config --global user.name "lasthelloworld"
+$ git config --global user.email "812691062@qq.com"
+
+//查看当前电脑git 的username 和email
+git config --list
 
 
 //查看本地秘钥是否生成
@@ -10,7 +13,15 @@ cd ~/.ssh
 ls //查看目录
 id_rsa.pub 中内容复制到github 的ssh key上。
 
+测试连接是否成功：
+ssh -T git@github.com
+正确提示:Hi lasthelloworld! You've successfully authenticated, but GitHub does not provide shell access.
+
+
 
 //本地关联远程仓库
+git remote add <name> git@github.com:username/gitname.git
 $ git remote add origin git@github.com:username/gitname.git
 
+//查看关联的远端库列表
+git remote -v 

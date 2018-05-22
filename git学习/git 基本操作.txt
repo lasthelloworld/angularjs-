@@ -13,3 +13,18 @@ git commit -m "msg"
 
 //推送文件
 git push 
+
+问题1：
+Git master branch has no upstream branch的解决：
+(1)无法确定推送到远端那个分支。
+git push --set-upstream origin master //提交到远端分支
+(2)无法确定远端分支是否创建
+git push -u origin master //推送并创建远端分支
+(3)git 上传文件到仓库上提示：origin does not to be a git repository:
+一般是添加的远端库地址有误，删除原来错误的，添加正确的
+git remote remove <name>  
+git remote add <name> git@github.com:yourusername/test.git
+
+
+//查看分支
+git branch 
