@@ -18,8 +18,13 @@ ssh -T git@github.com
 正确提示:Hi lasthelloworld! You've successfully authenticated, but GitHub does not provide shell access.
 
 
+设置代理：
+git config --global http.proxy //查看当前电脑代理
+git config –-global https.proxy http://127.0.0.1:1080  
 
-//本地关联远程仓库
+
+
+//本地关联远程仓库,注意：ssh登录开头都是git@。
 git remote add <name> git@github.com:username/gitname.git
 $ git remote add origin git@github.com:username/gitname.git
 
