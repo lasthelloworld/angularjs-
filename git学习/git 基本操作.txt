@@ -1,0 +1,15 @@
+
+
+
+//新增文件到git
+git add  文件名
+git add -A   保存所有的修改
+git add .     保存新的添加和修改，但是不包括删除
+git add -u   保存修改和删除，但是不包括新建文件。
+注意：add操作都是针对于整个git仓库，不管当前文件夹路径
+
+//提交文件
+git commit -m "msg"
+
+//推送文件
+git push 
