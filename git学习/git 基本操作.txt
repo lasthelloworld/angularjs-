@@ -33,3 +33,12 @@ git remote add <name> git@github.com:yourusername/test.git
 
 //查看分支
 git branch 
+
+
+
+//把多个提交合并为一个提交
+(1)git rebase -i HEAD~4 //从头部开始合并4个提交为1个提交
+(2)之后会弹出一个编辑文本，把对应2~4行的pick 改为squash，代表2,3,4合并到1上提交。
+(3) git add -A
+(4)git rebase --continue 
+(5) git log //可以查看到4合并为1的提交
