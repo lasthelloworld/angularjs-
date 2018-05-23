@@ -1,4 +1,4 @@
-
+﻿
 
 //设置Git的username 和email
 $ git config --global user.name "lasthelloworld"
@@ -13,13 +13,22 @@ cd ~/.ssh
 ls //查看目录
 id_rsa.pub 中内容复制到github 的ssh key上。
 
+注意：在windows7下安装git后没有ssh
+解决办法是: 全部留空即可,一路回车 
+$ ssh-keygen -t rsa -C “邮箱地址” ##回车 
+回自动创建.ssh
+
+
 测试连接是否成功：
 ssh -T git@github.com
 正确提示:Hi lasthelloworld! You've successfully authenticated, but GitHub does not provide shell access.
 
 
+进入指定项目文件夹：例如app
+cd app
 
-
+初始化git仓库：
+git init
 
 //本地关联远程仓库,注意：ssh登录开头都是git@，每个本地库都有自己的关联。
 git remote add <name> git@github.com:username/gitname.git
@@ -27,3 +36,43 @@ $ git remote add origin git@github.com:username/gitname.git
 
 //查看关联的远端库列表
 git remote -v 
+
+//查看远端库分支：
+git branch -r
+
+
+
+第一次本地连接远端库常见问题：
+一、
+注意：在windows7下安装git后没有ssh
+解决办法是: 全部留空即可,一路回车 
+$ ssh-keygen -t rsa -C “邮箱地址” ##回车 
+回自动创建.ssh
+
+二、
+无法在指定文件夹下本地关联远程仓库 remote add 远端git remote add origin git@github.com:lasthelloworld/gitTest.git：
+解决方法：git init
+
+
+三、
+error: failed to push some refs to 'git@github.com:lasthelloworld/gitTest.git'：在第一次连接远端库时无法提交创建远端分支
+git pull --rebase origin master
+
+
+四、
+无法pull 远端分支代码:
+（1）使用如下git命令查看所有远程分支：
+git branch -r
+（2）拉取远程分支并创建本地分支
+git checkout -b 本地分支名x origin/远程分支名x
+使用该方式会在本地新建分支x，并自动切换到该本地分支x。
+（3）git checkout -b master origin/master 创建本地分支并关联远端分支
+采用此种方法建立的本地分支会和远程分支建立映射关系。
+
+
+或者使用如下命令：
+git fetch origin 远程分支名x:本地分支名x
+使用该方式会在本地新建分支x，但是不会自动切换到该本地分支x，需要手动checkout。
+
+
+
