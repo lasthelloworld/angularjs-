@@ -5,7 +5,8 @@ git stash pop stash@{0} //将工作区还原为暂存区栈的0时刻
 若与拉去文件有冲突需手动解决冲突
 
 
-git stash save -a "xxx" //指定暂存区名字暂存
+git stash save  "xxx" //指定暂存区名字暂存
+git stash save -u "xxx" //包含忽略文件也加入暂存，指定暂存区名字暂存
 git stash list //查看暂存区列表
 git stash pop stash@{1} //回复到指定下标暂存区，并删除暂存区
 git stash apply stash@{1}  //回复到指定下标暂存区
