@@ -8,3 +8,7 @@ git config --global push.default matching
 从 Git 2.0 开始，git 采用更加保守的值'simple'，只会推送当前分支到相应的远程仓库，'git pull' 也将值更新当前分支。
 
 git config --global push.default simple
+
+
+文件上传太大无法上传设置上传限制为500MB
+git config --global http.postBuffer 524288000
