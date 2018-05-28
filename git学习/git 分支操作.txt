@@ -1,0 +1,11 @@
+git branch 1.0.0  //新建本地分支
+git branch -a //查看本地分支和远端分支
+git checkout 1.0.0 //切换到目标分支
+git checkout -b 2.0.0 //创建并切换到2.0.0本地分支
+
+git branch -d 1.0.0 //删除本地分支
+git push origin --delete 1.0.0 //删除远端分支
+
+
+git push origin 1.0.0   //以当前分支为基础创建远端分支
+git checkout -b master origin/master //以某个分支为基础创建新分支并关联到远端分支
