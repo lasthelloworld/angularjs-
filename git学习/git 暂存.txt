@@ -1,0 +1,11 @@
+git add //对新增修改操作文件压入暂存区
+git stash //暂存修改工作区文件，此时修改的文件被隐藏，即可拉取或切换到远端分支
+git pull //拉去远端文件
+git stash pop stash@{0} //将工作区还原为暂存区栈的0时刻
+若与拉去文件有冲突需手动解决冲突
+
+
+git stash save -a "xxx" //指定暂存区名字暂存
+git stash list //查看暂存区列表
+git stash pop stash@{1} //回复到指定下标暂存区，并删除暂存区
+git stash apply stash@{1}  //回复到指定下标暂存区
