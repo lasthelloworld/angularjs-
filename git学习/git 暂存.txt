@@ -9,3 +9,6 @@ git stash save -a "xxx" //指定暂存区名字暂存
 git stash list //查看暂存区列表
 git stash pop stash@{1} //回复到指定下标暂存区，并删除暂存区
 git stash apply stash@{1}  //回复到指定下标暂存区
+
+
+注意：暂存区是共享的，也就是暂存后可以应用到其他分支。
