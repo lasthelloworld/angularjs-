@@ -1,0 +1,43 @@
+（1）git 打补丁：
+git diff：生成标准的patch，兼容性强，不是git版本库都可使用。
+git format-patch:生成git 专用补丁
+
+a7c7b02fa0647dd2fa2a6302a727077ecd88a0a3
+
+（2）diff和format-patch区别:
+diff不带有提交信息，后者带有提交信息，但format-patch对补丁要求严格。
+
+（3）format-patch打补丁：
+git format-patch -1 commit-id // + commit-id 选定的那个commit打patch
+git format-patch –n commit-id // -n指patch数，07fe对应提交的名称, 某次提交（含）之前的几次提交
+git format-patch -3                  // 从head往前3个提交的内容，可修改为你想要的数值
+git format-patch -s commit-id          // 某次提交以后的所有patch, --4e16指的是SHA1 ID， -s : signed off
+git format-patch [old-commit-id]..[new-commit-id]  //从A次到B次之间的所有补丁
+
+（4）diff打补丁：
+git diff [old-commit-id] [new-commit-id] -b 根据差异打补丁
+
+
+（5）git-am 可以一次合并一个文件，或者一个目录下所有的patch，或者你的邮箱目录下的patch.
+ 例如：把生成的所有补丁拷贝到一个路径下，然后使用
+git am ~/patch-set/*.patch
+
+
+git 补丁检查：
+先检查patch文件：git apply --stat newpatch.patch
+查看补丁是否能够干净顺利地应用到当前分支中: git apply --check xxx.patch
+对于git diff生成的patch，你可以用git apply --check  xxx.diff
+生成差异文件:git apply --reject 0001-1.patch 根据xxx补丁检查差异文件打入补丁
+
+
+diff生成的补丁一般用apply,
+format-patch 生成的补丁一般用am
+
+
+打入 patch / diff：
+git apply xxx.patch
+git apply xxx.diff
+检查 patch / diff：
+git apply --check xxx.patch
+git apply --check xxx.diff
+
