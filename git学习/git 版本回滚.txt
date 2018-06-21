@@ -1,0 +1,9 @@
+//查看前三行提交记录
+git log -3 
+
+//回滚到指定的版本
+git reset --hard xxxxxxxx
+
+
+//强制提交到指定远端
+git push -f origin xxxxxxxx
