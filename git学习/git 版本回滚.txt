@@ -7,3 +7,29 @@ git reset --hard xxxxxxxx
 
 //强制提交到指定远端
 git push -f origin xxxxxxxx
+
+
+
+
+
+----回退单个文件
+//进入指定目录查看提交记录
+git log  demo.txt
+
+//回滚单个文件
+git reset xxxxxxxxx  demo.txt
+
+
+//提交回滚修改
+git commit -m "提交回滚修改"
+
+//更新到工作目录
+git checkout demo.txt
+
+
+//提交到远程仓库
+git push 
+
+
+
+--回退一个文件目录下的文件
