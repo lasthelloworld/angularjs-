@@ -35,6 +35,8 @@ git remote add <name> git@github.com:username/gitname.git
 $ git remote add origin git@github.com:username/gitname.git
 
 
+//在创建本地分支时，需要添加一个些文件才能创建
+
 //添加远端分支
 git push -u origin master
 
