@@ -12,6 +12,8 @@ git config --list
 cd ~/.ssh
 ls //查看目录
 id_rsa.pub 中内容复制到github 的ssh key上。
+例如：C:\Users\LENOVO\.ssh
+
 
 注意：在windows7下安装git后没有ssh
 解决办法是: 全部留空即可,一路回车 
@@ -32,7 +34,7 @@ git init
 
 //本地关联远程仓库,注意：ssh登录开头都是git@，每个本地库都有自己的关联。
 git remote add <name> git@github.com:username/gitname.git
-$ git remote add origin git@github.com:username/gitname.git
+例如： $ git remote add origin git@github.com:username/gitTest.git
 
 
 //在创建本地分支时，需要添加一个些文件才能创建
